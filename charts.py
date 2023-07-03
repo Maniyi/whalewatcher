@@ -9,12 +9,11 @@ import json
 # Set page to wide layout
 st.set_page_config(layout='wide')
 
-
 # Connect to the Google Sheet
 gc = gspread.service_account(filename="service_account.json")
 
 # Specify the URL of the publicly accessible Google Sheet
-sheet_url = st.secrets["pulsex_sheet_url"]
+sheet_url = "https://docs.google.com/spreadsheets/d/1oCkacuwg0O2v7mLXG-hV5AzHUpAZgDBLA4lyjtohK-M/edit?usp=sharing"
 
 # Open the Google Sheet
 sh = gc.open_by_url(sheet_url)
