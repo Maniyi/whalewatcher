@@ -9,12 +9,9 @@ import json
 # Set page to wide layout
 st.set_page_config(layout='wide')
 
-# Parse the JSON string back into a Python dict
-service_account_info = json.loads(
-    st.secrets["GOOGLE_SERVICE_ACCOUNT_JSON"])
 
-# Use dict instead of file
-gc = gspread.service_account_from_dict(service_account_info)
+# Connect to the Google Sheet
+gc = gspread.service_account(filename="service_account.json")
 
 # Specify the URL of the publicly accessible Google Sheet
 sheet_url = st.secrets["pulsex_sheet_url"]
